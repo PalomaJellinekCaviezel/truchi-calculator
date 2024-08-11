@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruchiCalculator</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <main id="main" class="container">
+        <header>
+            <h1>TruchiCalculator</h1>
+        </header>
+        <div id="info" class="inputInfo">
+            <input type="text" id="name" placeholder="Nombre aqui" onkeypress="handleKeyPress(event)">
+            <button id="buttonGetIn" class="buttonGetIn">Entrar</button>
+            <h4 id="welcome"></h4>
+            <div id="formElements">
+                <input type="number" id="amount" placeholder="Monto a convertir aqui" onchange="calculate()">
+                <label for="transactionType">Tipo de transacción:</label>
+                <select id="transactionType" onchange="calculate()">
+                    <option value="buy">Compra</option>
+                    <option value="sell">Venta</option>
+                </select>
+                <select id="options" onchange="calculate()">
+                    <option value="default">Seleccione una opción válida</option>
+                    <option value="official">Dolar Oficial</option>
+                    <option value="blue">Dolar Blue</option>
+                    <option value="euro">Euro</option>
+                </select>
+                <h4 id="result"></h4>
+                <img src="https://www.lifeboxset.com/wp-content/uploads/2022/07/los-simpson-teoria-explica-como-es-homero-puede-pagar-todo.jpg"
+                    alt="Meme de Homero con dinero" id="image">
+            </div>
+        </div>
+        <button id="buttonMode" class="buttonMode">
+            <i class="fas fa-moon" id="iconMoon"></i>
+            <i class="fas fa-sun" id="iconSun"></i>
+        </button>
+    </main>
+    <footer id="footer">
+        <h5>&copy;Paloma Caviezel 2024</h4>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

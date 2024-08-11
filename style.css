@@ -1,0 +1,142 @@
+/* Variables CSS para colores y sombras */
+:root {
+    --primary-color: navy;
+    --secondary-color: violet;
+    --light-color: #fafafa;
+    --dark-color: rgb(30, 11, 37);
+    --button-shadow: 1px 2px 5px -2px rgba(0, 0, 0, 0.75);
+}
+
+/* Estilos generales */
+body {
+    background-color: var(--light-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    position: relative;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+    min-height: 100vh;
+}
+
+/* Botones */
+.buttonGetIn ,
+.buttonMode {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: var(--button-shadow);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttonMode {
+    display: block;
+    margin: 0 auto;
+}
+
+.buttonGetIn:hover, .buttonMode:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.buttonGetIn:active, .buttonMode:active {
+    background-color: darkviolet;
+    transform: scale(1.02);
+}
+
+/* Títulos y textos */
+h1, h5 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+h4 {
+    color: rgb(203, 3, 3);
+    margin: 10px 0;
+    font-size: 11px;
+    font-weight: lighter;
+}
+
+/* Inputs y selects */
+input, select {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 3px;
+    padding: 3px;
+}
+
+label {
+    display: block;
+    margin: 10px 0px 5px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Contenedor de formulario */
+.inputInfo {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+/* Imágenes */
+img {
+    border-radius: 15px;
+    box-shadow: var(--button-shadow);
+    margin: 0 auto 15px;
+    max-width: 300px;
+}
+
+/* Modo nocturno */
+.darkMode {
+    background-color: var(--dark-color);
+    color: var(--secondary-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+
+    .buttonGetIn, .buttonMode {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    }
+
+    h1,h5,input,select,label {
+        color: var(--secondary-color);
+    }
+
+    #iconSun {
+    opacity: 1; /* Mostrar en modo oscuro */
+    }
+
+    #iconMoon {
+        opacity: 0; /* Ocultar en modo oscuro */
+    }
+}
+
+#iconSun {
+    opacity: 0; /* Oculto por defecto */
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    color: var(--primary-color);
+    
+}
+
+/* Elementos deshabilitados */
+.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
