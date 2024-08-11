@@ -41,14 +41,14 @@ function enableFormElements() {
 
 function calculate() {
     const amount = parseInt(document.getElementById("amount").value);
-    const selectedOption = document.getElementById("options").value;
+    let options = document.getElementById("options").value;
     const transactionType = document.getElementById("transactionType").value;
 
     if (isNaN(amount) || amount <= 0) {
         document.getElementById("result").innerHTML = "Por favor, ingrese un monto válido";
         return;
     }
-    if (selectedOption == 'default') {
+    if (options == 'default') {
         document.getElementById("result").innerHTML = "Por favor, ingrese un tipo de cambio.";
         return;
     }
@@ -66,21 +66,15 @@ function calculate() {
         }
     };
 
-    const rate = rates[transactionType][selectedOption];
+    const rate = rates[transactionType][options];
     const result = amount / rate;
     document.getElementById("result").innerHTML = "Resultado: " + result.toFixed(2);
 }
 
-const images = {
-    default: "https://www.lifeboxset.com/wp-content/uploads/2022/07/los-simpson-teoria-explica-como-es-homero-puede-pagar-todo.jpg",
-    official: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4H6HswHyGL344m639r4FMs02OhKn3-xdm0w&s",
-    blue: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS22uXXsCNhGa7LsgEF0HH8D4746G53Pphqxw&s",
-    euro: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlem2Lc0kjTdV2ycb25pz5zuQVdqD-8Y9ADg&s"
-};
-
+const image = document.getElementById("image");
 options.addEventListener("change", () => {
-    image.setAttribute("src", images[options.value]);
-});
+    image.setAttribute("src", "/img/" + options.value + ".jpg");
+})
 
 document.getElementById("buttonMode").addEventListener('click', () => {
     document.getElementById("footer").classList.toggle("darkMode")
