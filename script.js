@@ -1,3 +1,4 @@
+// test comment for a new commit
 document.getElementById("buttonGetIn").addEventListener('click', saludito);
 function saludito() {
     const welcome = document.getElementById("welcome");
